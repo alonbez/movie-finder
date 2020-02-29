@@ -1,0 +1,13 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html {
+  height: 100%;
+  min-height: 500px;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.7) 25vh, #ffce0f 0%);
+  font-family: Roboto, sans-serif;
+}

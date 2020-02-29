@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="title" fxLayout="column" fxLayoutAlign="center center">
+    <span>Movie Finder</span>
+  </div>
+
+  <div class="main-container" fxLayout="column" fxLayoutAlign="center center">
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Search..." #searchInput type="text"
+             (keyup.enter)="onSearch(searchInput.value)">
+    </mat-form-field>
+
+    <div class="error">&nbsp;
+      <span *ngIf="error">{{error}}</span>
+    </div>
+
+    <app-movies-list class="movies-list"
+                     *ngIf="results.length > 0"
+                     [movies]="results"
+                     (select)="onSelect($event)"></app-movies-list>
+
+    <app-movie-details class="movie-details"
+                       *ngIf="selected"
+                       (close)="selected = undefined"
+                       [movie]="selected"></app-movie-details>
+
+  </div>
+
+  <div class="loading" *ngIf="busy" fxLayout="column" fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+  </div>
+
+
+</div>

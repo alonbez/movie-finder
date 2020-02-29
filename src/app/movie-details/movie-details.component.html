@@ -1,0 +1,31 @@
+<div class="container">
+  <div #main class="details" fxLayout="column" fxLayoutAlign="space-between none">
+    <div fxLayout="row" fxLayoutAlign="end none" class="close">
+      <span class="close-btn" (click)="close.emit()">X</span>
+    </div>
+    <div class="content" fxLayout="row">
+
+      <div class="movie-details">
+        <div class="title">{{movie?.Title}}</div>
+        <div class="movie-properties">
+          <div class="year"><b>Year:</b>{{movie.Year}}</div>
+          <div class="plot"><b>Plot:</b><br>{{movie.Plot}}</div>
+          <div class="rated"><b>Rating:</b>{{movie.Rated}}</div>
+          <div class="runtime"><b>Runtime:</b>{{movie.Runtime}}</div>
+          <div class="director"><b>Director:</b>{{movie.Director}}</div>
+          <div class="actors"><b>Actors:</b>{{movie.Actors}}</div>
+          <div class="imdb-rating">
+            <b>IMDB Rating:</b>{{movie.imdbRating}}
+            <a [href]="imdbRef + movie.imdbID" target="_blank"><img class="imdb-logo" src="../../assets/imdb-logo.png"></a>
+          </div>
+        </div>
+      </div>
+      <div class="poster" fxLayoutAlign="end center">
+        <img *ngIf="movie.Poster !== 'N/A'"
+             [src]="movie.Poster">
+        <img *ngIf="movie.Poster === 'N/A'"
+             src="../../assets/no-poster.png">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="movie-item" (click)="select.emit(movie)" fxLayout="column" fxLayoutAlign="center center">
+  <img *ngIf="movie.Poster !== 'N/A'"
+       [src]="movie.Poster">
+  <img *ngIf="movie.Poster === 'N/A'"
+       src="../../../assets/no-poster.png">
+  <div class="title">{{movie.Title}}</div>
+  <div class="year">({{movie.Year}})</div>
+</div>

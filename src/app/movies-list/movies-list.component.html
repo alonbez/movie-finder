@@ -1,0 +1,7 @@
+<div class="movies-list" fxLayout="row" fxLayoutAlign="center start">
+  <div *ngFor="let i of moviesOrder">
+    <app-movie-item *ngIf="movies[i]"
+                    [movie]="movies[i]"
+                    (select)="select.emit($event)"></app-movie-item>
+  </div>
+</div>
